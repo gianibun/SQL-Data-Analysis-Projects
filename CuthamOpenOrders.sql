@@ -1,4 +1,6 @@
-/*Please provide ALL open orders for Cutham. Let’s have the following:
+/*
+My boss requested the following:
+Please provide ALL open orders for Cutham. Let’s have the following:
 •	PO #		
 •	Writer
 x	Internal notes
@@ -11,9 +13,9 @@ x	Internal notes
 •	Order Date
 •	Ship date (promise date)
 */
------------
---Merge 4 different tables to get all of the above data-- 
------------
+
+--Merge 4 different tables to get all of the above data
+
 select OPO.purchase_order_id, OPO.status_code, receive_date as promised_date, POL.create_date, OPO.writer,ep.buy_line_id, POLG.product_id, EP.description, stock_qty,receive_qty,price ,branch_cost_per_um,  POLG.generation_id, POLG.line_id, cogs_amount, total_amount
 from PROD.clipse.open_purchase_order OPO
 
