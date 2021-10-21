@@ -1,10 +1,10 @@
-
+--Looking at the data from the table 
 select location, date, total_cases, new_cases, total_deaths, population
 from CovidDeathsCleaned
 order by 1,2
 
 --Looking at Total Cases vs Total Deaths
---Likelehood of sying if you contract covid in your country
+--Likelehood of dying if you contract covid in your country
 select location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 from CovidDeathsCleaned
 Where location like '%states%'
