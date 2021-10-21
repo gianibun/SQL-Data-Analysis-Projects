@@ -1,3 +1,8 @@
+/*
+This is a fun project to practice my SQL skills
+Below result is later used for visualization in Tableau
+*/
+
 --Looking at the data from the table 
 select location, date, total_cases, new_cases, total_deaths, population
 from CovidDeathsCleaned
