@@ -25,27 +25,13 @@ JOIN NashvilleHousing b
 	AND a.UniqueID <> b.UniqueID
 WHERE a.PropertyAddress IS NULL
 
-UPDATE a -->must use alias otherwise will be error
+UPDATE a -->must use alias otherwise it will not work
 SET PropertyAddress = ISNULL(a.PropertyAddress,b.PropertyAddress) -- if a.PropertyAddress is NULL then populate with b.PropertyAddress
 FROM NashvilleHousing a
 JOIN NashvilleHousing b 
 	ON a.ParcelID = b.ParcelID
 	AND a.UniqueID <> b.UniqueID
 WHERE a.PropertyAddress IS NULL
-
-/*
-UPDATE SET
-
-syntax  
-UPDATE table_name
-SET column1 = value1, column2 = value2, ...
-WHERE condition;
-
-example
-UPDATE Customers
-SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
-WHERE CustomerID = 1;
-*/
 
 --------------------------------------------------------------------------------------------------------------------------
 -- Breaking out Address into Individual Columns (Address, City, State)
